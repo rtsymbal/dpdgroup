@@ -13,7 +13,6 @@ public class LoginStep {
 
     @And("I click login button")
     public void iClickLoginButton() {
-
     }
 
     @Then("I should see the userform page")
