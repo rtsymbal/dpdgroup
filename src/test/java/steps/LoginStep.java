@@ -1,4 +1,4 @@
-package Steps;
+package steps;
 
 import base.BaseUtil;
 import cucumber.api.java.en.And;
@@ -7,8 +7,8 @@ import cucumber.api.java.en.Then;
 import io.cucumber.datatable.DataTable;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import pages.LoginPage;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -29,15 +29,20 @@ public class LoginStep extends BaseUtil {
     @And("I enter a credentials for Login")
     public void iEnterAFollowingCredentialsForLogin(DataTable table) {
         List<List<String>> data = Collections.singletonList(table.row(1));
+
+        LoginPage page = new LoginPage(base.driver);
         System.out.println("I enter a following credentials for Login: " +data.get(0).get(0)+ " " +data.get(0).get(1));
-        base.driver.findElement(By.name("UserName")).sendKeys(data.get(0).get(0));
-        base.driver.findElement(By.name("Password")).sendKeys(data.get(0).get(1));
+        page.login(data.get(0).get(0), data.get(0).get(1));
+//        base.driver.findElement(By.name("UserName")).sendKeys(data.get(0).get(0));
+//        base.driver.findElement(By.name("Password")).sendKeys(data.get(0).get(1));
     }
 
     @And("I click login button")
     public void iClickLoginButton() {
         System.out.println("I click login button");
-        base.driver.findElement(By.name("Login")).submit();
+        LoginPage page = new LoginPage(base.driver);
+        page.clickLogin();
+//        base.driver.findElement(By.name("Login")).submit();
     }
 
     @Then("I should see the userform page")
