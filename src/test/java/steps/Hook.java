@@ -10,6 +10,7 @@ public class Hook extends BaseUtil {
     private BaseUtil base;
 
     public Hook(BaseUtil base) {
+
         this.base = base;
     }
 
@@ -29,6 +30,6 @@ public class Hook extends BaseUtil {
         }
 
         System.out.println("Closing the browser: Chrome");
-//        base.driver.close();
+        base.driver.close();
     }
 }

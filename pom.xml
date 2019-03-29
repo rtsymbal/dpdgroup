@@ -31,6 +31,25 @@
                         </includes>
                     </configuration>
                 </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>net.masterthought</groupId>-->
+<!--                    <artifactId>maven-cucumber-reporting</artifactId>-->
+<!--                    <version>4.5.0</version>-->
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <id>execution</id>-->
+<!--                            <phase>verify</phase>-->
+<!--                            <goals>-->
+<!--                                <goal>generate</goal>-->
+<!--                            </goals>-->
+<!--                            <configuration>-->
+<!--                                <projectName>DPD</projectName>-->
+<!--                                <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>-->
+<!--                                <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>-->
+<!--                            </configuration>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
+<!--                </plugin>-->
             </plugins>
         </pluginManagement>
     </build>
@@ -75,10 +94,6 @@
             <version>4.13-beta-2</version>
             <scope>test</scope>
         </dependency>
-
-
-
-
     </dependencies>
 
 
